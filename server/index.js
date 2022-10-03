@@ -21,7 +21,7 @@ app.use(express.json());
 
 // Generate a random string
 const fetchID = () => Math.random().toString(36).substring(2, 10);
-let tasks = {
+const tasks = {
     pending: {
         title: "pending",
         items: [
@@ -138,7 +138,6 @@ socketIO.on("connection", (socket) => {
 })
 
 
-
 app.get("/api", (req, res) => {
     res.json(tasks);
 });
@@ -146,6 +145,5 @@ app.get("/api", (req, res) => {
 app.listen(PORT, () => {
     console.log(`Server is listening on ${PORT}`);
 })
-
 
 
